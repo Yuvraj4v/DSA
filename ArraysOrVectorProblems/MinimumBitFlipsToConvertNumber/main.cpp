@@ -1,0 +1,19 @@
+//leetcode problem number is 2220
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+using namespace std;
+    int minBitFlips(int start, int goal) {
+        int ans = start ^ goal;
+        int count = 0;
+        for(int i = 0 ; i < 31 ; i++){
+            if(ans & (1<<i)){
+                count += 1; 
+            }
+        }
+        return count;
+    }
+int main(){
+    cout<<minBitFlips(10,7);
+}
